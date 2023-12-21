@@ -9,10 +9,15 @@ import Offers from './pages/Offers';
 import Profile from './pages/Profile';
 import ForgotPassword from './pages/ForgotPassword';
 
+// components
+
+import Navbar from './components/Navbar';
+
 function App() {
   return (
     <>
       <Router>
+        <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/profile' element={<Profile />} />
