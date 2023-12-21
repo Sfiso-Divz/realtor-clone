@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { FaEyeSlash } from "react-icons/fa"
 import { FaEye } from "react-icons/fa";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import OAuth from '../components/OAuth';
-
+import { signInWithEmailAndPassword, auth, getAuth } from 'firebase/auth';
+import {toast} from 'react-toastify'
 export default function SignIn() {
 
   const [showPassword, setShowPasssword] = useState(false)
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     email: "",
     password: ""
@@ -19,6 +21,25 @@ export default function SignIn() {
     }))
   }
   const {email, password} = formData
+
+  async function onSubmit(e){
+    e.preventDefault()
+
+    try {
+      
+      const auth = getAuth()
+      const userCredentials = await signInWithEmailAndPassword(auth, email, password)
+    
+
+      if(userCredentials.user){
+        navigate("/")
+      }
+
+      toast.success("Logged in Successfully")
+    } catch (error) {
+      toast.error("Bad user credentials")
+    }
+  }
   return (
   
       <section>
@@ -30,7 +51,7 @@ export default function SignIn() {
             />
           </div>
           <div className='w-full md:w-[67%] lg:w-[40%] lg:ml-20'>
-            <form >
+            <form onSubmit={onSubmit}>
               <input className='w-full px-4 py-2 text-xl text-gray-700 mb-6  bg-white border-gray-300 rounded transition ease-in-out' type="email" id='email' value={email} onChange={onChange} placeholder='Email address' />
 
               <div className='relative mb-6'>
