@@ -32,7 +32,7 @@ export default function SignUp() {
           </div>
           <div className='w-full md:w-[67%] lg:w-[40%] lg:ml-20'>
             <form >
-              <input className='w-full px-4 py-2 text-xl text-gray-700 mb-6  bg-white border-gray-300 rounded transition ease-in-out' type="name" id='name' value={name} onChange={onChange} placeholder='Full Name' />
+              <input className='w-full px-4 py-2 text-xl text-gray-700 mb-6  bg-white border outline-blue-600 border-gray-300 rounded transition ease-in-out' type="name" id='name' value={name} onChange={onChange} placeholder='Full Name' />
               <input className='w-full px-4 py-2 text-xl text-gray-700 mb-6  bg-white border-gray-300 rounded transition ease-in-out' type="email" id='email' value={email} onChange={onChange} placeholder='Email address' />
 
               <div className='relative mb-6'>

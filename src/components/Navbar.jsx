@@ -19,9 +19,9 @@ export default function Navbar() {
             </div>
             <div >
                 <ul className='flex space-x-10'>
-                    <li className={` cursor-pointer py-3 text-sm text-gray-400 border-b-[3px] border-b-transparent ${ pathMatchRoute("/") && "text-black font-semibold  border-b-red-500 "}`} onClick={() => navigate("/")}>Home</li>
-                    <li className={` cursor-pointer py-3 text-sm text-gray-400 border-b-[3px] border-b-transparent ${ pathMatchRoute("/offers") && "text-black font-semibold  border-b-red-500"}`} onClick={() => navigate("/offers")}>Offers</li>
-                    <li className={` cursor-pointer py-3 text-sm text-gray-400 border-b-[3px]- border-b-transparent ${ pathMatchRoute("/sign-in") && "text-black font-semibold border-b-red-500"}`} onClick={() => navigate("/sign-in")}>Sign In</li>
+                    <li className={` cursor-pointer py-3 text-sm text-gray-400 border-b-[3px] border-transparent ${ pathMatchRoute("/") && "text-black font-semibold  border-b-red-500 "}`} onClick={() => navigate("/")}>Home</li>
+                    <li className={` cursor-pointer py-3 text-sm text-gray-400 border-b-[3px] border-transparent ${ pathMatchRoute("/offers") && "text-black font-semibold  border-b-red-500"}`} onClick={() => navigate("/offers")}>Offers</li>
+                    <li className={` cursor-pointer py-3 text-sm text-gray-400 border-b-[3px] border-transparent ${ pathMatchRoute("/sign-in") && "text-black font-semibold border-b-red-500"}`} onClick={() => navigate("/sign-in")}>Sign In</li>
                 </ul>
             </div>
         </header>
