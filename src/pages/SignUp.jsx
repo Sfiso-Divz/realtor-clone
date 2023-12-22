@@ -34,7 +34,6 @@ export default function SignUp() {
 
     try {
       const auth = getAuth()
-
       const userCredentials = await createUserWithEmailAndPassword(auth, email, password)
       
       updateProfile(auth.currentUser, {

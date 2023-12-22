@@ -3,7 +3,7 @@ import { FaEyeSlash } from "react-icons/fa"
 import { FaEye } from "react-icons/fa";
 import { Link, useNavigate } from 'react-router-dom'
 import OAuth from '../components/OAuth';
-import { signInWithEmailAndPassword, auth, getAuth } from 'firebase/auth';
+import { signInWithEmailAndPassword, getAuth } from 'firebase/auth';
 import {toast} from 'react-toastify'
 export default function SignIn() {
 

@@ -8,6 +8,7 @@ import { db } from "../firebase";
 export default function OAuth() {
 
   const navigate = useNavigate()
+  
   async function onGoogleClick(){
 
     try {
